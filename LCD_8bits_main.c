@@ -11,7 +11,7 @@
 
 void Lcd_Port(uint8_t a)
 {
-	if(a & 0b00000001)
+	if(a & 1)
 		D0 = 1;
 	else
 		D0 = 0;
@@ -30,4 +30,24 @@ void Lcd_Port(uint8_t a)
 		D3 = 1;
 	else
 		D3 = 0;
+    
+    if(a & 16)
+		D4 = 1;
+	else
+		D4 = 0;
+
+	if(a & 32)
+		D5 = 1;
+	else
+		D5 = 0;
+
+	if(a & 64)
+		D6 = 1;
+	else
+		D6 = 0;
+
+	if(a & 128)
+		D7 = 1;
+	else
+		D7 = 0;
 }
