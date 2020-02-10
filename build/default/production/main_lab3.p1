@@ -1,9 +1,17 @@
 Version 4.0 HI-TECH Software Intermediate Code
 [t ~ __interrupt . k ]
 [t T1 __interrupt ]
-"3587 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 3587: extern volatile __bit ADIF __attribute__((address(0x66)));
-[v _ADIF `Vb ~T0 @X0 0 e@102 ]
+"543 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 543:     struct {
+[s S19 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S19 . TMR1IF TMR2IF CCP1IF SSPIF TXIF RCIF ADIF ]
+"542
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 542: typedef union {
+[u S18 `S19 1 ]
+[n S18 . . ]
+"553
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 553: extern volatile PIR1bits_t PIR1bits __attribute__((address(0x00C)));
+[v _PIR1bits `VS18 ~T0 @X0 0 e@12 ]
 "1251
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 1251:     struct {
 [s S45 :1 `uc 1 :1 `uc 1 :4 `uc 1 :2 `uc 1 ]
@@ -31,12 +39,27 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 1238: extern volatile unsigned char ADRESH __attribute__((address(0x01E)));
 [v _ADRESH `Vuc ~T0 @X0 0 e@30 ]
 [p mainexit ]
-"30 main_lab3.c
-[; ;main_lab3.c: 30: void Port_init(void);
+"39 main_lab3.c
+[; ;main_lab3.c: 39: void Port_init(void);
 [v _Port_init `(v ~T0 @X0 0 ef ]
 "8 ./ADCheader.h
 [; ;./ADCheader.h: 8: void ADC_init(uint8_t Fosc ,uint8_t channel, uint8_t int_on, uint8_t left_or_right);
 [v _ADC_init `(v ~T0 @X0 0 ef4`uc`uc`uc`uc ]
+"68 ./LCD_8bits.h
+[; ;./LCD_8bits.h: 68: void LCD_INIT (void);
+[v _LCD_INIT `(v ~T0 @X0 0 ef ]
+"9 ./ADCheader.h
+[; ;./ADCheader.h: 9: void start_conversion (void);
+[v _start_conversion `(v ~T0 @X0 0 ef ]
+"66 ./LCD_8bits.h
+[; ;./LCD_8bits.h: 66: void LCD_CLR (void);
+[v _LCD_CLR `(v ~T0 @X0 0 ef ]
+"67
+[; ;./LCD_8bits.h: 67: void LCD_SET_CURSOR (uint8_t a, uint8_t b);
+[v _LCD_SET_CURSOR `(v ~T0 @X0 0 ef2`uc`uc ]
+"70
+[; ;./LCD_8bits.h: 70: void LCD_WRITE_STRING(char *a);
+[v _LCD_WRITE_STRING `(v ~T0 @X0 0 ef1`*uc ]
 "1416 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 1416: extern volatile unsigned char TRISA __attribute__((address(0x085)));
 [v _TRISA `Vuc ~T0 @X0 0 e@133 ]
@@ -324,110 +347,150 @@ Version 4.0 HI-TECH Software Intermediate Code
 "3546
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 3546: __asm("EECON2 equ 018Dh");
 [; <" EECON2 equ 018Dh ;# ">
-"31 main_lab3.c
-[; ;main_lab3.c: 31: uint8_t pot1, pot2;
+"40 main_lab3.c
+[; ;main_lab3.c: 40: uint8_t pot1, pot2, start_another;
 [v _pot1 `uc ~T0 @X0 1 e ]
 [v _pot2 `uc ~T0 @X0 1 e ]
+[v _start_another `uc ~T0 @X0 1 e ]
 [v $root$_isr `(v ~T0 @X0 0 e ]
-"33
-[; ;main_lab3.c: 33: void __attribute__((picinterrupt(("")))) isr(void){
+"42
+[; ;main_lab3.c: 42: void __attribute__((picinterrupt(("")))) isr(void){
 [v _isr `(v ~T1 @X0 1 ef ]
 {
 [e :U _isr ]
 [f ]
-"34
-[; ;main_lab3.c: 34:     if (ADIF == 1){
-[e $ ! == -> _ADIF `i -> 1 `i 139  ]
+"43
+[; ;main_lab3.c: 43:     if (PIR1bits.ADIF == 1){
+[e $ ! == -> . . _PIR1bits 0 6 `i -> 1 `i 139  ]
 {
-"35
-[; ;main_lab3.c: 35:         if (ADCON0bits.CHS0 == 0){
+"44
+[; ;main_lab3.c: 44:         PIR1bits.ADIF = 0;
+[e = . . _PIR1bits 0 6 -> -> 0 `i `uc ]
+"45
+[; ;main_lab3.c: 45:         start_another = 1;
+[e = _start_another -> -> 1 `i `uc ]
+"46
+[; ;main_lab3.c: 46:         if (ADCON0bits.CHS0 == 0){
 [e $ ! == -> . . _ADCON0bits 1 2 `i -> 0 `i 140  ]
 {
-"36
-[; ;main_lab3.c: 36:             pot1 = ADRESH;
+"47
+[; ;main_lab3.c: 47:             pot1 = ADRESH;
 [e = _pot1 _ADRESH ]
-"37
-[; ;main_lab3.c: 37:         }else{
+"48
+[; ;main_lab3.c: 48:             ADCON0bits.CHS0 = 1;
+[e = . . _ADCON0bits 1 2 -> -> 1 `i `uc ]
+"49
+[; ;main_lab3.c: 49:         }else{
 }
 [e $U 141  ]
 [e :U 140 ]
 {
-"38
-[; ;main_lab3.c: 38:             pot2 = ADRESH;
+"50
+[; ;main_lab3.c: 50:             pot2 = ADRESH;
 [e = _pot2 _ADRESH ]
-"39
-[; ;main_lab3.c: 39:         }
+"51
+[; ;main_lab3.c: 51:             ADCON0bits.CHS0 = 0;
+[e = . . _ADCON0bits 1 2 -> -> 0 `i `uc ]
+"52
+[; ;main_lab3.c: 52:         }
 }
 [e :U 141 ]
-"40
-[; ;main_lab3.c: 40:     }
+"53
+[; ;main_lab3.c: 53:     }
 }
 [e :U 139 ]
-"42
-[; ;main_lab3.c: 42: }
+"54
+[; ;main_lab3.c: 54: }
 [e :UE 138 ]
 }
 [v $root$_main `(v ~T0 @X0 0 e ]
-"44
-[; ;main_lab3.c: 44: void main(void) {
+"56
+[; ;main_lab3.c: 56: void main(void) {
 [v _main `(v ~T0 @X0 1 ef ]
 {
 [e :U _main ]
 [f ]
-"45
-[; ;main_lab3.c: 45:     Port_init();
+"57
+[; ;main_lab3.c: 57:     Port_init();
 [e ( _Port_init ..  ]
-"46
-[; ;main_lab3.c: 46:     ADC_init(1,0,1,0);
+"58
+[; ;main_lab3.c: 58:     ADC_init(1,0,1,0);
 [e ( _ADC_init (4 , , , -> -> 1 `i `uc -> -> 0 `i `uc -> -> 1 `i `uc -> -> 0 `i `uc ]
-"47
-[; ;main_lab3.c: 47:     while(1){
+"59
+[; ;main_lab3.c: 59:     LCD_INIT();
+[e ( _LCD_INIT ..  ]
+"60
+[; ;main_lab3.c: 60:     while(1){
 [e :U 144 ]
 {
-"50
-[; ;main_lab3.c: 50:     }
+"61
+[; ;main_lab3.c: 61:         if (start_another == 1){
+[e $ ! == -> _start_another `i -> 1 `i 146  ]
+{
+"62
+[; ;main_lab3.c: 62:             start_conversion();
+[e ( _start_conversion ..  ]
+"63
+[; ;main_lab3.c: 63:             start_another = 0;
+[e = _start_another -> -> 0 `i `uc ]
+"64
+[; ;main_lab3.c: 64:         }
+}
+[e :U 146 ]
+"65
+[; ;main_lab3.c: 65:         LCD_CLR();
+[e ( _LCD_CLR ..  ]
+"66
+[; ;main_lab3.c: 66:         LCD_SET_CURSOR(1,1);
+[e ( _LCD_SET_CURSOR (2 , -> -> 1 `i `uc -> -> 1 `i `uc ]
+"67
+[; ;main_lab3.c: 67:         LCD_WRITE_STRING("V1   V2");
+[e ( _LCD_WRITE_STRING (1 :s 1C ]
+"69
+[; ;main_lab3.c: 69:     }
 }
 [e :U 143 ]
 [e $U 144  ]
 [e :U 145 ]
-"51
-[; ;main_lab3.c: 51:     return;
+"70
+[; ;main_lab3.c: 70:     return;
 [e $UE 142  ]
-"52
-[; ;main_lab3.c: 52: }
+"71
+[; ;main_lab3.c: 71: }
 [e :UE 142 ]
 }
-"54
-[; ;main_lab3.c: 54: void Port_init(void){
+"73
+[; ;main_lab3.c: 73: void Port_init(void){
 [v _Port_init `(v ~T0 @X0 1 ef ]
 {
 [e :U _Port_init ]
 [f ]
-"55
-[; ;main_lab3.c: 55:     TRISA = 1;
+"74
+[; ;main_lab3.c: 74:     TRISA = 1;
 [e = _TRISA -> -> 1 `i `uc ]
-"56
-[; ;main_lab3.c: 56:     ANSELbits.ANS0 = 1;
+"75
+[; ;main_lab3.c: 75:     ANSELbits.ANS0 = 1;
 [e = . . _ANSELbits 0 0 -> -> 1 `i `uc ]
-"57
-[; ;main_lab3.c: 57:     ANSELbits.ANS1 = 1;
+"76
+[; ;main_lab3.c: 76:     ANSELbits.ANS1 = 1;
 [e = . . _ANSELbits 0 1 -> -> 1 `i `uc ]
-"58
-[; ;main_lab3.c: 58:     ANSELH = 0;
+"77
+[; ;main_lab3.c: 77:     ANSELH = 0;
 [e = _ANSELH -> -> 0 `i `uc ]
-"59
-[; ;main_lab3.c: 59:     TRISB = 0;
+"78
+[; ;main_lab3.c: 78:     TRISB = 0;
 [e = _TRISB -> -> 0 `i `uc ]
-"60
-[; ;main_lab3.c: 60:     PORTB = 0;
+"79
+[; ;main_lab3.c: 79:     PORTB = 0;
 [e = _PORTB -> -> 0 `i `uc ]
-"61
-[; ;main_lab3.c: 61:     TRISD = 0;
+"80
+[; ;main_lab3.c: 80:     TRISD = 0;
 [e = _TRISD -> -> 0 `i `uc ]
-"62
-[; ;main_lab3.c: 62:     PORTD = 0;
+"81
+[; ;main_lab3.c: 81:     PORTD = 0;
 [e = _PORTD -> -> 0 `i `uc ]
-"63
-[; ;main_lab3.c: 63: }
-[e :UE 146 ]
+"82
+[; ;main_lab3.c: 82: }
+[e :UE 147 ]
 }
+[a 1C 86 49 32 32 32 86 50 0 ]

@@ -2639,7 +2639,7 @@ extern __bank0 __bit __timeout;
 
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c90\\stdint.h" 1 3
 # 17 "./LCD_8bits.h" 2
-# 63 "./LCD_8bits.h"
+# 64 "./LCD_8bits.h"
 void LCD_PORT (uint8_t a);
 void LCD_CMD (uint8_t a);
 void LCD_CLR (void);

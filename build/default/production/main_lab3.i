@@ -2654,7 +2654,7 @@ typedef uint16_t uintptr_t;
 # 17 "./LCD_8bits.h"
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c90\\stdint.h" 1 3
 # 17 "./LCD_8bits.h" 2
-# 63 "./LCD_8bits.h"
+# 64 "./LCD_8bits.h"
 void LCD_PORT (uint8_t a);
 void LCD_CMD (uint8_t a);
 void LCD_CLR (void);
@@ -2680,30 +2680,36 @@ void ADC_init(uint8_t Fosc ,uint8_t channel, uint8_t int_on, uint8_t left_or_rig
 void start_conversion (void);
 uint8_t done_conversion (void);
 # 25 "main_lab3.c" 2
-
-
-
-
-
+# 39 "main_lab3.c"
 void Port_init(void);
-uint8_t pot1, pot2;
+uint8_t pot1, pot2, start_another;
 
 void __attribute__((picinterrupt(("")))) isr(void){
-    if (ADIF == 1){
+    if (PIR1bits.ADIF == 1){
+        PIR1bits.ADIF = 0;
+        start_another = 1;
         if (ADCON0bits.CHS0 == 0){
             pot1 = ADRESH;
+            ADCON0bits.CHS0 = 1;
         }else{
             pot2 = ADRESH;
+            ADCON0bits.CHS0 = 0;
         }
     }
-
 }
 
 void main(void) {
     Port_init();
     ADC_init(1,0,1,0);
+    LCD_INIT();
     while(1){
-
+        if (start_another == 1){
+            start_conversion();
+            start_another = 0;
+        }
+        LCD_CLR();
+        LCD_SET_CURSOR(1,1);
+        LCD_WRITE_STRING("V1   V2");
 
     }
     return;

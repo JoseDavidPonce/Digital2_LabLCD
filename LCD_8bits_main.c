@@ -100,7 +100,8 @@ void LCD_WRITE_CHAR(char a){
     LCD_PORT (a);
     EN = 1;
     __delay_us(40);
-    EN = 0;        
+    EN = 0;       
+    __delay_ms(5);
 }
 
 void LCD_WRITE_STRING (char *a){
@@ -110,11 +111,9 @@ void LCD_WRITE_STRING (char *a){
 }
 
 void LCD_SHIFT_RIGHT(void){
-    LCD_CMD(0x01);
-    LCD_CMD(0x0C);
+    LCD_CMD(0x1C);
 }
 
 void LCD_SHIFT_LEFT(void){
-    LCD_CMD(0x01);
-    LCD_CMD(0x08);
+    LCD_CMD(0x18);
 }
