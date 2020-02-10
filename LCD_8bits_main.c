@@ -66,57 +66,44 @@ void LCD_CLR (void){
 }
 
 void LCD_SET_CURSOR (uint8_t a, uint8_t b){
-    uint8_t temporal, x, z;
+    uint8_t temporal;
     if (a == 1) {
         temporal = 0x80 + b - 1;
-        x = temporal>>4;
-        z = temporal & 0x0F;
-        LCD_CMD(x);
-        LCD_CMD(z);
+        LCD_CMD(temporal);
     }
     else if (a == 2){
         temporal = 0xC0 + b - 1;
-        x = temporal>>4;
-        z = temporal & 0x0F;
-        LCD_CMD(x);
-        LCD_CMD(z);
+        LCD_CMD(temporal);
     }
 }
 
 void LCD_INIT (void) {
     LCD_PORT(0x00);
     __delay_ms(20);
-    LCD_CMD(0x033);
+    LCD_CMD(0x03);
     __delay_ms(5);
     LCD_CMD(0x03);
-    __delay_ms(11);
+    __delay_us(160);
     LCD_CMD(0x03);
+    __delay_us(160);
     
-    LCD_CMD(0x02);
-    LCD_CMD(0x02);
+    LCD_CMD(0x38);
     LCD_CMD(0x08);
-    LCD_CMD(0x00);
-    LCD_CMD(0x0C);
-    LCD_CMD(0x00);
+    LCD_CMD(0x01);
     LCD_CMD(0x06);
+    LCD_CMD(0x0C);
+
 }
 
-void LCD_WRITE_CHAR(uint8_t a){
-    uint8_t temporal, x;
-    temporal = a & 0x0F;
-    x = a & 0xF0;
+void LCD_WRITE_CHAR(char a){
     RS = 1;
-    LCD_PORT (x>>4);
+    LCD_PORT (a);
     EN = 1;
     __delay_us(40);
-    EN = 0;
-    LCD_PORT(temporal);
-    EN = 1;
-    __delay_us(40);
-    EN = 0;          
+    EN = 0;        
 }
 
-void LCD_WRITE_STRING (uint8_t *a){
+void LCD_WRITE_STRING (char *a){
     int i;
     for(i=0; a[i]!='\0'; i++)
         LCD_WRITE_CHAR(a[i]);

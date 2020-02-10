@@ -65,8 +65,8 @@ void LCD_CMD (uint8_t a);
 void LCD_CLR (void);
 void LCD_SET_CURSOR (uint8_t a, uint8_t b);
 void LCD_INIT (void);
-void LCD_WRITE_CHAR (uint8_t a);
-void LCD_WRITE_STRING(uint8_t *a);
+void LCD_WRITE_CHAR (char a);
+void LCD_WRITE_STRING(char *a);
 void LCD_SHIFT_RIGHT(void);
 void LCD_SHIFT_LEFT(void);
 
