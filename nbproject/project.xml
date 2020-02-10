@@ -3,7 +3,7 @@
     <type>com.microchip.mplab.nbide.embedded.makeproject</type>
     <configuration>
         <data xmlns="http://www.netbeans.org/ns/make-project/1">
-            <name>Libreria_8bits_LCD</name>
+            <name>Digital2_Lab3</name>
             <creation-uuid>25ba38e9-b925-4be1-9e1a-b5b829ddf167</creation-uuid>
             <make-project-type>0</make-project-type>
             <c-extensions>c</c-extensions>
@@ -14,6 +14,7 @@
             <make-dep-projects/>
             <sourceRootList>
                 <sourceRootElem>.</sourceRootElem>
+                <sourceRootElem>../../../../../../MPLABXProjects/Laboratorio2_2.X</sourceRootElem>
             </sourceRootList>
             <confList>
                 <confElem>

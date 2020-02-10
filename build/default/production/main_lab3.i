@@ -1,4 +1,4 @@
-# 1 "LCD_8bits_main.c"
+# 1 "main_lab3.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 288 "<built-in>" 3
@@ -6,7 +6,58 @@
 # 1 "<built-in>" 2
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
-# 1 "LCD_8bits_main.c" 2
+# 1 "main_lab3.c" 2
+
+
+
+
+
+
+#pragma config FOSC = EXTRC_NOCLKOUT
+#pragma config WDTE = OFF
+#pragma config PWRTE = OFF
+#pragma config MCLRE = OFF
+#pragma config CP = OFF
+#pragma config CPD = OFF
+#pragma config BOREN = OFF
+#pragma config IESO = OFF
+#pragma config FCMEN = OFF
+#pragma config LVP = OFF
+
+
+#pragma config BOR4V = BOR40V
+#pragma config WRT = OFF
+
+
+# 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\xc.h" 1 3
+# 18 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\xc.h" 3
+extern const char __xc8_OPTIM_SPEED;
+
+extern double __fpnormalize(double);
+
+
+
+# 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c90\\xc8debug.h" 1 3
+# 13 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c90\\xc8debug.h" 3
+#pragma intrinsic(__builtin_software_breakpoint)
+extern void __builtin_software_breakpoint(void);
+# 23 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\xc.h" 2 3
+
+
+
+
+# 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\pic.h" 1 3
+
+
+
+
+# 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\htc.h" 1 3
+
+
+
+# 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\xc.h" 1 3
+# 4 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\htc.h" 2 3
+# 5 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\pic.h" 2 3
 
 
 
@@ -14,6 +65,9 @@
 
 
 
+
+# 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\pic_chip_select.h" 1 3
+# 2703 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\pic_chip_select.h" 3
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\pic16f887.h" 1 3
 # 44 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\pic16f887.h" 3
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\__at.h" 1 3
@@ -2425,7 +2479,41 @@ extern volatile __bit nW __attribute__((address(0x4A2)));
 
 
 extern volatile __bit nWRITE __attribute__((address(0x4A2)));
-# 8 "LCD_8bits_main.c" 2
+# 2703 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\pic_chip_select.h" 2 3
+# 13 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\pic.h" 2 3
+# 30 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\pic.h" 3
+#pragma intrinsic(__nop)
+extern void __nop(void);
+# 78 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\pic.h" 3
+__attribute__((__unsupported__("The " "FLASH_READ" " macro function is no longer supported. Please use the MPLAB X MCC."))) unsigned char __flash_read(unsigned short addr);
+
+__attribute__((__unsupported__("The " "FLASH_WRITE" " macro function is no longer supported. Please use the MPLAB X MCC."))) void __flash_write(unsigned short addr, unsigned short data);
+
+__attribute__((__unsupported__("The " "FLASH_ERASE" " macro function is no longer supported. Please use the MPLAB X MCC."))) void __flash_erase(unsigned short addr);
+
+
+
+# 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\eeprom_routines.h" 1 3
+# 114 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\eeprom_routines.h" 3
+extern void eeprom_write(unsigned char addr, unsigned char value);
+extern unsigned char eeprom_read(unsigned char addr);
+# 85 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\pic.h" 2 3
+
+
+
+
+
+
+#pragma intrinsic(_delay)
+extern __attribute__((nonreentrant)) void _delay(unsigned long);
+#pragma intrinsic(_delaywdt)
+extern __attribute__((nonreentrant)) void _delaywdt(unsigned long);
+# 137 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\pic.h" 3
+extern __bank0 unsigned char __resetbits;
+extern __bank0 __bit __powerdown;
+extern __bank0 __bit __timeout;
+# 27 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\xc.h" 2 3
+# 22 "main_lab3.c" 2
 
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c90\\stdint.h" 1 3
 # 13 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c90\\stdint.h" 3
@@ -2560,83 +2648,10 @@ typedef int16_t intptr_t;
 
 
 typedef uint16_t uintptr_t;
-# 9 "LCD_8bits_main.c" 2
+# 23 "main_lab3.c" 2
 
 # 1 "./LCD_8bits.h" 1
-# 16 "./LCD_8bits.h"
-# 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\xc.h" 1 3
-# 18 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\xc.h" 3
-extern const char __xc8_OPTIM_SPEED;
-
-extern double __fpnormalize(double);
-
-
-
-# 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c90\\xc8debug.h" 1 3
-# 13 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c90\\xc8debug.h" 3
-#pragma intrinsic(__builtin_software_breakpoint)
-extern void __builtin_software_breakpoint(void);
-# 23 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\xc.h" 2 3
-
-
-
-
-# 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\pic.h" 1 3
-
-
-
-
-# 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\htc.h" 1 3
-
-
-
-# 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\xc.h" 1 3
-# 4 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\htc.h" 2 3
-# 5 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\pic.h" 2 3
-
-
-
-
-
-
-
-
-# 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\pic_chip_select.h" 1 3
-# 13 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\pic.h" 2 3
-# 30 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\pic.h" 3
-#pragma intrinsic(__nop)
-extern void __nop(void);
-# 78 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\pic.h" 3
-__attribute__((__unsupported__("The " "FLASH_READ" " macro function is no longer supported. Please use the MPLAB X MCC."))) unsigned char __flash_read(unsigned short addr);
-
-__attribute__((__unsupported__("The " "FLASH_WRITE" " macro function is no longer supported. Please use the MPLAB X MCC."))) void __flash_write(unsigned short addr, unsigned short data);
-
-__attribute__((__unsupported__("The " "FLASH_ERASE" " macro function is no longer supported. Please use the MPLAB X MCC."))) void __flash_erase(unsigned short addr);
-
-
-
-# 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\eeprom_routines.h" 1 3
-# 114 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\eeprom_routines.h" 3
-extern void eeprom_write(unsigned char addr, unsigned char value);
-extern unsigned char eeprom_read(unsigned char addr);
-# 85 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\pic.h" 2 3
-
-
-
-
-
-
-#pragma intrinsic(_delay)
-extern __attribute__((nonreentrant)) void _delay(unsigned long);
-#pragma intrinsic(_delaywdt)
-extern __attribute__((nonreentrant)) void _delaywdt(unsigned long);
-# 137 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\pic.h" 3
-extern __bank0 unsigned char __resetbits;
-extern __bank0 __bit __powerdown;
-extern __bank0 __bit __timeout;
-# 27 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\xc.h" 2 3
-# 16 "./LCD_8bits.h" 2
-
+# 17 "./LCD_8bits.h"
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c90\\stdint.h" 1 3
 # 17 "./LCD_8bits.h" 2
 # 63 "./LCD_8bits.h"
@@ -2649,115 +2664,58 @@ void LCD_WRITE_CHAR (char a);
 void LCD_WRITE_STRING(char *a);
 void LCD_SHIFT_RIGHT(void);
 void LCD_SHIFT_LEFT(void);
-# 10 "LCD_8bits_main.c" 2
+# 24 "main_lab3.c" 2
+
+# 1 "./ADCheader.h" 1
 
 
-void LCD_PORT(uint8_t a)
-{
- if(a & 1)
-  RB0 = 1;
- else
-  RB0 = 0;
 
- if(a & 2)
-  RB1 = 1;
- else
-  RB1 = 0;
 
- if(a & 4)
-  RB2 = 1;
- else
-  RB2 = 0;
 
- if(a & 8)
-  RB3 = 1;
- else
-  RB3 = 0;
+# 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c90\\stdint.h" 1 3
+# 6 "./ADCheader.h" 2
 
-    if(a & 16)
-  RB4 = 1;
- else
-  RB4 = 0;
 
- if(a & 32)
-  RB5 = 1;
- else
-  RB5 = 0;
+void ADC_init(uint8_t Fosc ,uint8_t channel, uint8_t int_on, uint8_t left_or_right);
+void start_conversion (void);
+uint8_t done_conversion (void);
+# 25 "main_lab3.c" 2
 
- if(a & 64)
-  RB6 = 1;
- else
-  RB6 = 0;
 
- if(a & 128)
-  RB7 = 1;
- else
-  RB7 = 0;
-}
 
-void LCD_CMD (uint8_t a){
-    RD5 = 0;
-    LCD_PORT(a);
-    RD7 = 1;
-    _delay((unsigned long)((4)*(4000000/4000.0)));
-    RD7 = 0;
-}
 
-void LCD_CLR (void){
-    LCD_CMD(0);
-    LCD_CMD(1);
-}
 
-void LCD_SET_CURSOR (uint8_t a, uint8_t b){
-    uint8_t temporal;
-    if (a == 1) {
-        temporal = 0x80 + b - 1;
-        LCD_CMD(temporal);
+void Port_init(void);
+uint8_t pot1, pot2;
+
+void __attribute__((picinterrupt(("")))) isr(void){
+    if (ADIF == 1){
+        if (ADCON0bits.CHS0 == 0){
+            pot1 = ADRESH;
+        }else{
+            pot2 = ADRESH;
+        }
     }
-    else if (a == 2){
-        temporal = 0xC0 + b - 1;
-        LCD_CMD(temporal);
+
+}
+
+void main(void) {
+    Port_init();
+    ADC_init(1,0,1,0);
+    while(1){
+
+
     }
+    return;
 }
 
-void LCD_INIT (void) {
-    LCD_PORT(0x00);
-    _delay((unsigned long)((20)*(4000000/4000.0)));
-    LCD_CMD(0x03);
-    _delay((unsigned long)((5)*(4000000/4000.0)));
-    LCD_CMD(0x03);
-    _delay((unsigned long)((160)*(4000000/4000000.0)));
-    LCD_CMD(0x03);
-    _delay((unsigned long)((160)*(4000000/4000000.0)));
-
-    LCD_CMD(0x38);
-    LCD_CMD(0x08);
-    LCD_CMD(0x01);
-    LCD_CMD(0x06);
-    LCD_CMD(0x0C);
-
-}
-
-void LCD_WRITE_CHAR(char a){
-    RD5 = 1;
-    LCD_PORT (a);
-    RD7 = 1;
-    _delay((unsigned long)((40)*(4000000/4000000.0)));
-    RD7 = 0;
-}
-
-void LCD_WRITE_STRING (char *a){
-    int i;
-    for(i=0; a[i]!='\0'; i++)
-        LCD_WRITE_CHAR(a[i]);
-}
-
-void LCD_SHIFT_RIGHT(void){
-    LCD_CMD(0x01);
-    LCD_CMD(0x0C);
-}
-
-void LCD_SHIFT_LEFT(void){
-    LCD_CMD(0x01);
-    LCD_CMD(0x08);
+void Port_init(void){
+    TRISA = 1;
+    ANSELbits.ANS0 = 1;
+    ANSELbits.ANS1 = 1;
+    ANSELH = 0;
+    TRISB = 0;
+    PORTB = 0;
+    TRISD = 0;
+    PORTD = 0;
 }
