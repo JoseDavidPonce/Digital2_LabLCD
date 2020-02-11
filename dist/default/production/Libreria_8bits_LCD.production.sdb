@@ -65,11 +65,13 @@
 [v _LCD_WRITE_CHAR LCD_WRITE_CHAR `(v  1 e 1 0 ]
 "66
 [v _LCD_WRITE_STRING LCD_WRITE_STRING `(v  1 e 1 0 ]
-"37 C:\Users\megaj\Desktop\UVG\5to Semestre\Digital 2\Repositorios\Libreria_8bits_LCD\main_lab3.c
+"5 C:\Users\megaj\Desktop\UVG\5to Semestre\Digital 2\Repositorios\Libreria_8bits_LCD\Lib_EUSART.c
+[v _EUSART_Init EUSART_Init `(v  1 e 1 0 ]
+"38 C:\Users\megaj\Desktop\UVG\5to Semestre\Digital 2\Repositorios\Libreria_8bits_LCD\main_lab3.c
 [v _isr isr `II(v  1 e 1 0 ]
-"51
+"52
 [v _main main `(v  1 e 1 0 ]
-"74
+"78
 [v _Port_init Port_init `(v  1 e 1 0 ]
 "166 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h
 [v _PORTA PORTA `VEuc  1 e 1 @5 ]
@@ -89,7 +91,7 @@
 "369
 [u S31 . 1 `S22 1 . 1 0 ]
 [v _PORTDbits PORTDbits `VES31  1 e 1 @8 ]
-[s S270 . 1 `uc 1 RBIF 1 0 :1:0 
+[s S276 . 1 `uc 1 RBIF 1 0 :1:0 
 `uc 1 INTF 1 0 :1:1 
 `uc 1 T0IF 1 0 :1:2 
 `uc 1 RBIE 1 0 :1:3 
@@ -99,13 +101,13 @@
 `uc 1 GIE 1 0 :1:7 
 ]
 "482
-[s S279 . 1 `uc 1 . 1 0 :2:0 
+[s S285 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 TMR0IF 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 TMR0IE 1 0 :1:5 
 ]
-[u S284 . 1 `S270 1 . 1 0 `S279 1 . 1 0 ]
-[v _INTCONbits INTCONbits `VES284  1 e 1 @11 ]
+[u S290 . 1 `S276 1 . 1 0 `S285 1 . 1 0 ]
+[v _INTCONbits INTCONbits `VES290  1 e 1 @11 ]
 [s S75 . 1 `uc 1 TMR1IF 1 0 :1:0 
 `uc 1 TMR2IF 1 0 :1:1 
 `uc 1 CCP1IF 1 0 :1:2 
@@ -117,7 +119,7 @@
 "553
 [u S83 . 1 `S75 1 . 1 0 ]
 [v _PIR1bits PIR1bits `VES83  1 e 1 @12 ]
-[s S408 . 1 `uc 1 RX9D 1 0 :1:0 
+[s S414 . 1 `uc 1 RX9D 1 0 :1:0 
 `uc 1 OERR 1 0 :1:1 
 `uc 1 FERR 1 0 :1:2 
 `uc 1 ADDEN 1 0 :1:3 
@@ -127,18 +129,18 @@
 `uc 1 SPEN 1 0 :1:7 
 ]
 "1068
-[s S417 . 1 `uc 1 RCD8 1 0 :1:0 
+[s S423 . 1 `uc 1 RCD8 1 0 :1:0 
 `uc 1 . 1 0 :5:1 
 `uc 1 RC9 1 0 :1:6 
 ]
-[s S421 . 1 `uc 1 . 1 0 :6:0 
+[s S427 . 1 `uc 1 . 1 0 :6:0 
 `uc 1 nRC8 1 0 :1:6 
 ]
-[s S424 . 1 `uc 1 . 1 0 :6:0 
+[s S430 . 1 `uc 1 . 1 0 :6:0 
 `uc 1 RC8_9 1 0 :1:6 
 ]
-[u S427 . 1 `S408 1 . 1 0 `S417 1 . 1 0 `S421 1 . 1 0 `S424 1 . 1 0 ]
-[v _RCSTAbits RCSTAbits `VES427  1 e 1 @24 ]
+[u S433 . 1 `S414 1 . 1 0 `S423 1 . 1 0 `S427 1 . 1 0 `S430 1 . 1 0 ]
+[v _RCSTAbits RCSTAbits `VES433  1 e 1 @24 ]
 "1238
 [v _ADRESH ADRESH `VEuc  1 e 1 @30 ]
 [s S94 . 1 `uc 1 ADON 1 0 :1:0 
@@ -170,7 +172,7 @@
 [v _TRISB TRISB `VEuc  1 e 1 @134 ]
 "1602
 [v _TRISD TRISD `VEuc  1 e 1 @136 ]
-[s S251 . 1 `uc 1 TMR1IE 1 0 :1:0 
+[s S257 . 1 `uc 1 TMR1IE 1 0 :1:0 
 `uc 1 TMR2IE 1 0 :1:1 
 `uc 1 CCP1IE 1 0 :1:2 
 `uc 1 SSPIE 1 0 :1:3 
@@ -179,9 +181,9 @@
 `uc 1 ADIE 1 0 :1:6 
 ]
 "1718
-[u S259 . 1 `S251 1 . 1 0 ]
-[v _PIE1bits PIE1bits `VES259  1 e 1 @140 ]
-[s S371 . 1 `uc 1 TX9D 1 0 :1:0 
+[u S265 . 1 `S257 1 . 1 0 ]
+[v _PIE1bits PIE1bits `VES265  1 e 1 @140 ]
+[s S377 . 1 `uc 1 TX9D 1 0 :1:0 
 `uc 1 TRMT 1 0 :1:1 
 `uc 1 BRGH 1 0 :1:2 
 `uc 1 SENDB 1 0 :1:3 
@@ -191,25 +193,25 @@
 `uc 1 CSRC 1 0 :1:7 
 ]
 "2582
-[s S380 . 1 `uc 1 TXD8 1 0 :1:0 
+[s S386 . 1 `uc 1 TXD8 1 0 :1:0 
 `uc 1 . 1 0 :5:1 
 `uc 1 nTX8 1 0 :1:6 
 ]
-[s S384 . 1 `uc 1 . 1 0 :6:0 
+[s S390 . 1 `uc 1 . 1 0 :6:0 
 `uc 1 TX8_9 1 0 :1:6 
 ]
-[u S387 . 1 `S371 1 . 1 0 `S380 1 . 1 0 `S384 1 . 1 0 ]
-[v _TXSTAbits TXSTAbits `VES387  1 e 1 @152 ]
-[s S302 . 1 `uc 1 . 1 0 :4:0 
+[u S393 . 1 `S377 1 . 1 0 `S386 1 . 1 0 `S390 1 . 1 0 ]
+[v _TXSTAbits TXSTAbits `VES393  1 e 1 @152 ]
+[s S308 . 1 `uc 1 . 1 0 :4:0 
 `uc 1 VCFG0 1 0 :1:4 
 `uc 1 VCFG1 1 0 :1:5 
 `uc 1 . 1 0 :1:6 
 `uc 1 ADFM 1 0 :1:7 
 ]
 "2991
-[u S308 . 1 `S302 1 . 1 0 ]
-[v _ADCON1bits ADCON1bits `VES308  1 e 1 @159 ]
-[s S350 . 1 `uc 1 ABDEN 1 0 :1:0 
+[u S314 . 1 `S308 1 . 1 0 ]
+[v _ADCON1bits ADCON1bits `VES314  1 e 1 @159 ]
+[s S356 . 1 `uc 1 ABDEN 1 0 :1:0 
 `uc 1 WUE 1 0 :1:1 
 `uc 1 . 1 0 :1:2 
 `uc 1 BRG16 1 0 :1:3 
@@ -219,8 +221,8 @@
 `uc 1 ABDOVF 1 0 :1:7 
 ]
 "3352
-[u S359 . 1 `S350 1 . 1 0 ]
-[v _BAUDCTLbits BAUDCTLbits `VES359  1 e 1 @391 ]
+[u S365 . 1 `S356 1 . 1 0 ]
+[v _BAUDCTLbits BAUDCTLbits `VES365  1 e 1 @391 ]
 "3387
 [v _ANSEL ANSEL `VEuc  1 e 1 @392 ]
 "3449
@@ -231,21 +233,21 @@
 [v __powers_ _powers_ `DC[13]d  1 e 52 0 ]
 "39
 [v __npowers_ _npowers_ `DC[13]d  1 e 52 0 ]
-"32 C:\Users\megaj\Desktop\UVG\5to Semestre\Digital 2\Repositorios\Libreria_8bits_LCD\main_lab3.c
+"33 C:\Users\megaj\Desktop\UVG\5to Semestre\Digital 2\Repositorios\Libreria_8bits_LCD\main_lab3.c
 [v _pot1 pot1 `uc  1 e 1 0 ]
 [v _pot2 pot2 `uc  1 e 1 0 ]
 [v _start_another start_another `uc  1 e 1 0 ]
-"33
+"34
 [v _volt1 volt1 `f  1 e 4 0 ]
 [v _volt2 volt2 `f  1 e 4 0 ]
-"34
-[v _string1 string1 `[5]uc  1 e 5 0 ]
 "35
+[v _string1 string1 `[5]uc  1 e 5 0 ]
+"36
 [v _string2 string2 `[5]uc  1 e 5 0 ]
-"51
+"52
 [v _main main `(v  1 e 1 0 ]
 {
-"72
+"76
 } 0
 "24 C:\Users\megaj/MPLABXProjects/Laboratorio2_2.X/ADCmain.c
 [v _start_conversion start_conversion `(v  1 e 1 0 ]
@@ -258,9 +260,9 @@
 [v sprintf@sp sp `*.4uc  1 a 1 wreg ]
 "533
 [v sprintf@fval fval `d  1 a 4 32 ]
-[u S649 . 4 `ul 1 vd 4 0 `d 1 integ 4 0 ]
+[u S667 . 4 `ul 1 vd 4 0 `d 1 integ 4 0 ]
 "543
-[v sprintf@tmpval tmpval `S649  1 a 4 26 ]
+[v sprintf@tmpval tmpval `S667  1 a 4 26 ]
 "545
 [v sprintf@val val `ul  1 a 4 18 ]
 "517
@@ -358,17 +360,17 @@
 "8 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcmul.c
 [v ___flmul __flmul `(d  1 e 4 0 ]
 {
-[s S847 . 4 `uc 1 a 1 0 `uc 1 b 1 1 `uc 1 c 1 2 `uc 1 d 1 3 ]
+[s S865 . 4 `uc 1 a 1 0 `uc 1 b 1 1 `uc 1 c 1 2 `uc 1 d 1 3 ]
 "13
-[s S852 . 4 `i 1 wordA 2 0 `i 1 wordB 2 2 ]
-[u S855 . 4 `l 1 i 4 0 `d 1 f 4 0 `S847 1 fAsBytes 4 0 `S852 1 fAsWords 4 0 ]
-[v ___flmul@prod prod `S855  1 a 4 28 ]
+[s S870 . 4 `i 1 wordA 2 0 `i 1 wordB 2 2 ]
+[u S873 . 4 `l 1 i 4 0 `d 1 f 4 0 `S865 1 fAsBytes 4 0 `S870 1 fAsWords 4 0 ]
+[v ___flmul@prod prod `S873  1 a 4 28 ]
 "12
 [v ___flmul@grs grs `ul  1 a 4 22 ]
-[s S924 . 2 `uc 1 a 1 0 `uc 1 b 1 1 ]
+[s S942 . 2 `uc 1 a 1 0 `uc 1 b 1 1 ]
 "14
-[u S927 . 2 `i 1 i 2 0 `ui 1 n 2 0 `S924 1 nAsBytes 2 0 ]
-[v ___flmul@temp temp `S927  1 a 2 32 ]
+[u S945 . 2 `i 1 i 2 0 `ui 1 n 2 0 `S942 1 nAsBytes 2 0 ]
+[v ___flmul@temp temp `S945  1 a 2 32 ]
 "10
 [v ___flmul@bexp bexp `uc  1 a 1 27 ]
 "11
@@ -520,10 +522,10 @@
 [v ___fleq@ff2 ff2 `d  1 p 4 7 ]
 "12
 } 0
-"74 C:\Users\megaj\Desktop\UVG\5to Semestre\Digital 2\Repositorios\Libreria_8bits_LCD\main_lab3.c
+"78 C:\Users\megaj\Desktop\UVG\5to Semestre\Digital 2\Repositorios\Libreria_8bits_LCD\main_lab3.c
 [v _Port_init Port_init `(v  1 e 1 0 ]
 {
-"84
+"88
 } 0
 "66 C:\Users\megaj\Desktop\UVG\5to Semestre\Digital 2\Repositorios\Libreria_8bits_LCD\LCD_8bits_main.c
 [v _LCD_WRITE_STRING LCD_WRITE_STRING `(v  1 e 1 0 ]
@@ -568,6 +570,16 @@
 [v LCD_CMD@a a `uc  1 a 1 5 ]
 "19
 } 0
+"5 C:\Users\megaj\Desktop\UVG\5to Semestre\Digital 2\Repositorios\Libreria_8bits_LCD\Lib_EUSART.c
+[v _EUSART_Init EUSART_Init `(v  1 e 1 0 ]
+{
+[v EUSART_Init@a a `uc  1 a 1 wreg ]
+[v EUSART_Init@a a `uc  1 a 1 wreg ]
+[v EUSART_Init@b b `uc  1 p 1 3 ]
+"7
+[v EUSART_Init@a a `uc  1 a 1 4 ]
+"30
+} 0
 "28 C:\Users\megaj/MPLABXProjects/Laboratorio2_2.X/ADCmain.c
 [v _ADC_init ADC_init `(v  1 e 1 0 ]
 {
@@ -579,8 +591,8 @@
 [v ADC_init@Fosc Fosc `uc  1 a 1 8 ]
 "151
 } 0
-"37 C:\Users\megaj\Desktop\UVG\5to Semestre\Digital 2\Repositorios\Libreria_8bits_LCD\main_lab3.c
+"38 C:\Users\megaj\Desktop\UVG\5to Semestre\Digital 2\Repositorios\Libreria_8bits_LCD\main_lab3.c
 [v _isr isr `II(v  1 e 1 0 ]
 {
-"49
+"50
 } 0

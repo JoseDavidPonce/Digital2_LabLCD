@@ -25,6 +25,7 @@
 #include <stdio.h>
 #include "LCD_8bits.h"
 #include "ADCheader.h"
+#include "EUSARTheader.h"
 
 #define _XTAL_FREQ 4000000
 
@@ -52,11 +53,14 @@ void main(void) {
     Port_init();
     LCD_INIT();
     ADC_init(1,1,1,0);
+    EUSART_Init(1, 0);
     while(1){
         if (start_another == 1){
             start_conversion();
             start_another = 0;
         }
+        
+        
         volt1 = pot1*(5.0/255);
         volt2 = pot2*(5.0/255);  
         sprintf(string1,"%1.2f", volt1);

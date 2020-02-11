@@ -2786,6 +2786,20 @@ void start_conversion (void);
 uint8_t done_conversion (void);
 # 27 "main_lab3.c" 2
 
+# 1 "./EUSARTheader.h" 1
+
+
+
+
+
+# 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c90\\stdint.h" 1 3
+# 6 "./EUSARTheader.h" 2
+
+
+void EUSART_Init(uint8_t a, uint8_t b);
+uint8_t CHECK_FOR_ERRORS (void);
+# 28 "main_lab3.c" 2
+
 
 
 
@@ -2813,11 +2827,14 @@ void main(void) {
     Port_init();
     LCD_INIT();
     ADC_init(1,1,1,0);
+    EUSART_Init(1, 0);
     while(1){
         if (start_another == 1){
             start_conversion();
             start_another = 0;
         }
+
+
         volt1 = pot1*(5.0/255);
         volt2 = pot2*(5.0/255);
         sprintf(string1,"%1.2f", volt1);
