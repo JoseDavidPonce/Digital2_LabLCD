@@ -2639,8 +2639,13 @@ extern __bank0 __bit __timeout;
 
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c90\\stdint.h" 1 3
 # 17 "./LCD_8bits.h" 2
-# 64 "./LCD_8bits.h"
-void LCD_PORT (uint8_t a);
+
+
+
+
+
+
+
 void LCD_CMD (uint8_t a);
 void LCD_CLR (void);
 void LCD_SET_CURSOR (uint8_t a, uint8_t b);
@@ -2652,60 +2657,17 @@ void LCD_SHIFT_LEFT(void);
 # 10 "LCD_8bits_main.c" 2
 
 
-void LCD_PORT(uint8_t a)
-{
- if(a & 1)
-  RB0 = 1;
- else
-  RB0 = 0;
-
- if(a & 2)
-  RB1 = 1;
- else
-  RB1 = 0;
-
- if(a & 4)
-  RB2 = 1;
- else
-  RB2 = 0;
-
- if(a & 8)
-  RB3 = 1;
- else
-  RB3 = 0;
-
-    if(a & 16)
-  RB4 = 1;
- else
-  RB4 = 0;
-
- if(a & 32)
-  RB5 = 1;
- else
-  RB5 = 0;
-
- if(a & 64)
-  RB6 = 1;
- else
-  RB6 = 0;
-
- if(a & 128)
-  RB7 = 1;
- else
-  RB7 = 0;
-}
-
 void LCD_CMD (uint8_t a){
-    RD5 = 0;
-    LCD_PORT(a);
-    RD7 = 1;
-    _delay((unsigned long)((4)*(4000000/4000.0)));
-    RD7 = 0;
+    PORTDbits.RD5 = 0;
+    PORTB = a;
+    PORTDbits.RD7 = 1;
+    _delay((unsigned long)((5)*(4000000/4000000.0)));
+    PORTDbits.RD7 = 0;
+    _delay((unsigned long)((5)*(4000000/4000.0)));
 }
 
 void LCD_CLR (void){
-    LCD_CMD(0);
-    LCD_CMD(1);
+    LCD_CMD(0x01);
 }
 
 void LCD_SET_CURSOR (uint8_t a, uint8_t b){
@@ -2721,15 +2683,17 @@ void LCD_SET_CURSOR (uint8_t a, uint8_t b){
 }
 
 void LCD_INIT (void) {
-    LCD_PORT(0x00);
-    _delay((unsigned long)((20)*(4000000/4000.0)));
-    LCD_CMD(0x03);
+    PORTB = 0;
+    _delay((unsigned long)((15)*(4000000/4000.0)));
+    LCD_CMD(0x30);
     _delay((unsigned long)((5)*(4000000/4000.0)));
-    LCD_CMD(0x03);
+    LCD_CMD(0x30);
     _delay((unsigned long)((160)*(4000000/4000000.0)));
-    LCD_CMD(0x03);
+    LCD_CMD(0x30);
     _delay((unsigned long)((160)*(4000000/4000000.0)));
 
+
+    LCD_CMD(0x02);
     LCD_CMD(0x38);
     LCD_CMD(0x08);
     LCD_CMD(0x01);
@@ -2739,11 +2703,12 @@ void LCD_INIT (void) {
 }
 
 void LCD_WRITE_CHAR(char a){
-    RD5 = 1;
-    LCD_PORT (a);
-    RD7 = 1;
+    PORTDbits.RD5 = 1;
+    PORTB = a;
+    PORTDbits.RD7 = 1;
     _delay((unsigned long)((40)*(4000000/4000000.0)));
-    RD7 = 0;
+    PORTDbits.RD7 = 0;
+    _delay((unsigned long)((5)*(4000000/4000.0)));
 }
 
 void LCD_WRITE_STRING (char *a){
@@ -2753,11 +2718,9 @@ void LCD_WRITE_STRING (char *a){
 }
 
 void LCD_SHIFT_RIGHT(void){
-    LCD_CMD(0x01);
-    LCD_CMD(0x0C);
+    LCD_CMD(0x1C);
 }
 
 void LCD_SHIFT_LEFT(void){
-    LCD_CMD(0x01);
-    LCD_CMD(0x08);
+    LCD_CMD(0x18);
 }

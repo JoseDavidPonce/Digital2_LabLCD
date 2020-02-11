@@ -25,17 +25,7 @@
 #include "ADCheader.h"
 
 #define _XTAL_FREQ 4000000
-#define RS PORTDbits.RD5
-#define EN PORTDbits.RD7
-#define RW PORTDbits.RD6
-#define D0 PORTBbits.RB0
-#define D1 PORTBbits.RB1
-#define D2 PORTBbits.RB2
-#define D3 PORTBbits.RB3
-#define D4 PORTBbits.RB4
-#define D5 PORTBbits.RB5
-#define D6 PORTBbits.RB6
-#define D7 PORTBbits.RB7
+
 void Port_init(void);
 uint8_t pot1, pot2, start_another;
 
@@ -53,25 +43,25 @@ void __interrupt() isr(void){
     }
 }
 
-void main(void) {
+void main(void) {    
     Port_init();
-    ADC_init(1,0,1,0);
+    PORTDbits.RD4 = 1;
     LCD_INIT();
+    LCD_CLR();
+    ADC_init(1,0,1,0);
     while(1){
         if (start_another == 1){
             start_conversion();
             start_another = 0;
         }
-        LCD_CLR();
-        LCD_SET_CURSOR(1,1);
-        LCD_WRITE_STRING("V1   V2");
-    
+
     }
     return;
 }
 
 void Port_init(void){
     TRISA = 1;
+    ANSEL = 0;
     ANSELbits.ANS0 = 1;
     ANSELbits.ANS1 = 1;
     ANSELH = 0;
