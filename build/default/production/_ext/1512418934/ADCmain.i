@@ -2656,7 +2656,6 @@ uint8_t done_conversion (void) {
 }
 
 void start_conversion (void){
-    _delay((unsigned long)((5)*(4000000/4000000.0)));
     ADCON0bits.GO_DONE = 1;
 }
 
