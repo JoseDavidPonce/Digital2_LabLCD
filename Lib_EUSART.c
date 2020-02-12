@@ -40,9 +40,3 @@ uint8_t CHECK_FOR_ERRORS (void){
     
 }
 
-void SEND_STRING(char *a){
-    int i;
-    for(i=0; a[i]!='\0'; i++)
-        LCD_WRITE_CHAR(a[i]);
-
-}

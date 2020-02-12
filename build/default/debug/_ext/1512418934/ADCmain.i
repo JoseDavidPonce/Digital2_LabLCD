@@ -1,4 +1,4 @@
-# 1 "Lib_EUSART.c"
+# 1 "../../../../../../MPLABXProjects/Laboratorio2_2.X/ADCmain.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 288 "<built-in>" 3
@@ -6,142 +6,8 @@
 # 1 "<built-in>" 2
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
-# 1 "Lib_EUSART.c" 2
-# 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c90\\stdint.h" 1 3
-# 13 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c90\\stdint.h" 3
-typedef signed char int8_t;
-
-
-
-
-
-
-typedef signed int int16_t;
-
-
-
-
-
-
-
-typedef __int24 int24_t;
-
-
-
-
-
-
-
-typedef signed long int int32_t;
-# 52 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c90\\stdint.h" 3
-typedef unsigned char uint8_t;
-
-
-
-
-
-typedef unsigned int uint16_t;
-
-
-
-
-
-
-typedef __uint24 uint24_t;
-
-
-
-
-
-
-typedef unsigned long int uint32_t;
-# 88 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c90\\stdint.h" 3
-typedef signed char int_least8_t;
-
-
-
-
-
-
-
-typedef signed int int_least16_t;
-# 109 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c90\\stdint.h" 3
-typedef __int24 int_least24_t;
-# 118 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c90\\stdint.h" 3
-typedef signed long int int_least32_t;
-# 136 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c90\\stdint.h" 3
-typedef unsigned char uint_least8_t;
-
-
-
-
-
-
-typedef unsigned int uint_least16_t;
-# 154 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c90\\stdint.h" 3
-typedef __uint24 uint_least24_t;
-
-
-
-
-
-
-
-typedef unsigned long int uint_least32_t;
-# 181 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c90\\stdint.h" 3
-typedef signed char int_fast8_t;
-
-
-
-
-
-
-typedef signed int int_fast16_t;
-# 200 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c90\\stdint.h" 3
-typedef __int24 int_fast24_t;
-
-
-
-
-
-
-
-typedef signed long int int_fast32_t;
-# 224 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c90\\stdint.h" 3
-typedef unsigned char uint_fast8_t;
-
-
-
-
-
-typedef unsigned int uint_fast16_t;
-# 240 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c90\\stdint.h" 3
-typedef __uint24 uint_fast24_t;
-
-
-
-
-
-
-typedef unsigned long int uint_fast32_t;
-# 268 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c90\\stdint.h" 3
-typedef int32_t intmax_t;
-# 282 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c90\\stdint.h" 3
-typedef uint32_t uintmax_t;
-
-
-
-
-
-
-typedef int16_t intptr_t;
-
-
-
-
-typedef uint16_t uintptr_t;
-# 1 "Lib_EUSART.c" 2
-
+# 1 "../../../../../../MPLABXProjects/Laboratorio2_2.X/ADCmain.c" 2
+# 10 "../../../../../../MPLABXProjects/Laboratorio2_2.X/ADCmain.c"
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\xc.h" 1 3
 # 18 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\xc.h" 3
 extern const char __xc8_OPTIM_SPEED;
@@ -2626,58 +2492,294 @@ extern __bank0 unsigned char __resetbits;
 extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 # 27 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\xc.h" 2 3
-# 2 "Lib_EUSART.c" 2
+# 10 "../../../../../../MPLABXProjects/Laboratorio2_2.X/ADCmain.c" 2
 
-# 1 "./EUSARTheader.h" 1
+# 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c90\\stdint.h" 1 3
+# 13 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c90\\stdint.h" 3
+typedef signed char int8_t;
+
+
+
+
+
+
+typedef signed int int16_t;
+
+
+
+
+
+
+
+typedef __int24 int24_t;
+
+
+
+
+
+
+
+typedef signed long int int32_t;
+# 52 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c90\\stdint.h" 3
+typedef unsigned char uint8_t;
+
+
+
+
+
+typedef unsigned int uint16_t;
+
+
+
+
+
+
+typedef __uint24 uint24_t;
+
+
+
+
+
+
+typedef unsigned long int uint32_t;
+# 88 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c90\\stdint.h" 3
+typedef signed char int_least8_t;
+
+
+
+
+
+
+
+typedef signed int int_least16_t;
+# 109 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c90\\stdint.h" 3
+typedef __int24 int_least24_t;
+# 118 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c90\\stdint.h" 3
+typedef signed long int int_least32_t;
+# 136 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c90\\stdint.h" 3
+typedef unsigned char uint_least8_t;
+
+
+
+
+
+
+typedef unsigned int uint_least16_t;
+# 154 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c90\\stdint.h" 3
+typedef __uint24 uint_least24_t;
+
+
+
+
+
+
+
+typedef unsigned long int uint_least32_t;
+# 181 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c90\\stdint.h" 3
+typedef signed char int_fast8_t;
+
+
+
+
+
+
+typedef signed int int_fast16_t;
+# 200 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c90\\stdint.h" 3
+typedef __int24 int_fast24_t;
+
+
+
+
+
+
+
+typedef signed long int int_fast32_t;
+# 224 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c90\\stdint.h" 3
+typedef unsigned char uint_fast8_t;
+
+
+
+
+
+typedef unsigned int uint_fast16_t;
+# 240 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c90\\stdint.h" 3
+typedef __uint24 uint_fast24_t;
+
+
+
+
+
+
+typedef unsigned long int uint_fast32_t;
+# 268 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c90\\stdint.h" 3
+typedef int32_t intmax_t;
+# 282 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c90\\stdint.h" 3
+typedef uint32_t uintmax_t;
+
+
+
+
+
+
+typedef int16_t intptr_t;
+
+
+
+
+typedef uint16_t uintptr_t;
+# 11 "../../../../../../MPLABXProjects/Laboratorio2_2.X/ADCmain.c" 2
+
+# 1 "../../../../../../MPLABXProjects/Laboratorio2_2.X/ADCheader.h" 1
 
 
 
 
 
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c90\\stdint.h" 1 3
-# 6 "./EUSARTheader.h" 2
+# 6 "../../../../../../MPLABXProjects/Laboratorio2_2.X/ADCheader.h" 2
 
 
-void EUSART_Init(uint8_t a, uint8_t b);
-uint8_t CHECK_FOR_ERRORS (void);
-void SEND_STRING(char *a);
-# 3 "Lib_EUSART.c" 2
+void ADC_init(uint8_t Fosc ,uint8_t channel, uint8_t int_on, uint8_t left_or_right);
+void start_conversion (void);
+uint8_t done_conversion (void);
+# 12 "../../../../../../MPLABXProjects/Laboratorio2_2.X/ADCmain.c" 2
 
 
-void EUSART_Init (uint8_t a, uint8_t b){
-
-    BAUDCTLbits.BRG16 = 0;
-    TXSTAbits.BRGH = 1;
-    TXSTAbits.SYNC = 0;
-    RCSTAbits.SPEN = 1;
-    if (a==1){
-        PIE1bits.RCIE = 1;
-        PIR1bits.RCIF = 0;
-        INTCONbits.GIE = 1;
-        INTCONbits.PEIE = 1;
-    }
-    RCSTAbits.RX9D = 0;
-    RCSTAbits.CREN = 1;
 
 
-    TXSTAbits.TXEN = 1;
-    if(b==1){
-        PIE1bits.TXIE = 1;
-        PIR1bits.TXIF = 0;
-        INTCONbits.GIE = 1;
-        INTCONbits.PEIE = 1;
 
-    }
 
+
+uint8_t done_conversion (void) {
+    PIR1bits.ADIF = 0;
+    return ADRESH;
 }
 
-uint8_t CHECK_FOR_ERRORS (void){
-    if (RCSTAbits.FERR == 1){
-        return 1;
-    }else if (RCSTAbits.OERR == 1){
-        return 2;
-    }else{
-        return 0;
+void start_conversion (void){
+    ADCON0bits.GO_DONE = 1;
+}
+
+void ADC_init(uint8_t Fosc ,uint8_t channel, uint8_t int_on, uint8_t left_or_right) {
+    switch (Fosc) {
+        case 0:
+            ADCON0bits.ADCS1 = 0;
+            ADCON0bits.ADCS0 = 0;
+            break;
+        case 1:
+            ADCON0bits.ADCS1 = 0;
+            ADCON0bits.ADCS0 = 1;
+            break;
+        case 2:
+            ADCON0bits.ADCS1 = 1;
+            ADCON0bits.ADCS0 = 0;
+            break;
+        case 3:
+            ADCON0bits.ADCS1 = 1;
+            ADCON0bits.ADCS0 = 1;
+            break;
+        default:
+            ADCON0bits.ADCS1 = 0;
+            ADCON0bits.ADCS0 = 1;
+            break;
     }
 
+    switch (channel) {
+        case 0:
+            ADCON0bits.CHS0 = 0;
+            ADCON0bits.CHS1 = 0;
+            ADCON0bits.CHS2 = 0;
+            ADCON0bits.CHS3 = 0;
+            break;
+        case 1:
+            ADCON0bits.CHS0 = 1;
+            ADCON0bits.CHS1 = 0;
+            ADCON0bits.CHS2 = 0;
+            ADCON0bits.CHS3 = 0;
+            break;
+        case 2:
+            ADCON0bits.CHS0 = 0;
+            ADCON0bits.CHS1 = 1;
+            ADCON0bits.CHS2 = 0;
+            ADCON0bits.CHS3 = 0;
+            break;
+        case 3:
+            ADCON0bits.CHS0 = 1;
+            ADCON0bits.CHS1 = 1;
+            ADCON0bits.CHS2 = 0;
+            ADCON0bits.CHS3 = 0;
+            break;
+        case 4:
+            ADCON0bits.CHS0 = 0;
+            ADCON0bits.CHS1 = 0;
+            ADCON0bits.CHS2 = 1;
+            ADCON0bits.CHS3 = 0;
+            break;
+        case 5:
+            ADCON0bits.CHS0 = 1;
+            ADCON0bits.CHS1 = 0;
+            ADCON0bits.CHS2 = 1;
+            ADCON0bits.CHS3 = 0;
+            break;
+        case 6:
+            ADCON0bits.CHS0 = 0;
+            ADCON0bits.CHS1 = 1;
+            ADCON0bits.CHS2 = 1;
+            ADCON0bits.CHS3 = 0;
+            break;
+        case 7:
+            ADCON0bits.CHS0 = 1;
+            ADCON0bits.CHS1 = 1;
+            ADCON0bits.CHS2 = 1;
+            ADCON0bits.CHS3 = 0;
+            break;
+        case 8:
+            ADCON0bits.CHS0 = 0;
+            ADCON0bits.CHS1 = 0;
+            ADCON0bits.CHS2 = 0;
+            ADCON0bits.CHS3 = 1;
+            break;
+        case 9:
+            ADCON0bits.CHS0 = 1;
+            ADCON0bits.CHS1 = 0;
+            ADCON0bits.CHS2 = 0;
+            ADCON0bits.CHS3 = 1;
+            break;
+        case 10:
+            ADCON0bits.CHS0 = 0;
+            ADCON0bits.CHS1 = 1;
+            ADCON0bits.CHS2 = 0;
+            ADCON0bits.CHS3 = 1;
+            break;
+        case 11:
+            ADCON0bits.CHS0 = 1;
+            ADCON0bits.CHS1 = 1;
+            ADCON0bits.CHS2 = 0;
+            ADCON0bits.CHS3 = 1;
+            break;
+        case 12:
+            ADCON0bits.CHS0 = 0;
+            ADCON0bits.CHS1 = 0;
+            ADCON0bits.CHS2 = 1;
+            ADCON0bits.CHS3 = 1;
+            break;
+        case 13:
+            ADCON0bits.CHS0 = 1;
+            ADCON0bits.CHS1 = 0;
+            ADCON0bits.CHS2 = 1;
+            ADCON0bits.CHS3 = 1;
+            break;
+    }
+
+
+    ADCON0bits.ADON = 1;
+    if (int_on == 1){
+        PIR1bits.ADIF = 0;
+        PIE1bits.ADIE = 1;
+        INTCONbits.PEIE = 1;
+        INTCONbits.GIE = 1;
+    }
+    ADCON1bits.ADFM = left_or_right;
+    ADCON1bits.VCFG0 = 0;
+    ADCON1bits.VCFG1 = 0;
+    ADCON0bits.GO_DONE = 1;
 }
