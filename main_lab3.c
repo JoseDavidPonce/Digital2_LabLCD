@@ -32,8 +32,11 @@
 void Port_init(void);
 uint8_t pot1, pot2, start_another;
 float volt1, volt2;
-char string1[5];
-char string2[5];
+int valor = 0;
+char Contador;
+char string1[4];
+char string2[4];
+char string3[3];
 
 void __interrupt() isr(void){
     if (PIR1bits.ADIF == 1){
@@ -46,6 +49,9 @@ void __interrupt() isr(void){
             pot1 = ADRESH;
             ADCON0bits.CHS0 = 0;
         }
+    }if (PIR1bits.RCIF == 1){
+        Contador = RCREG;
+        PIR1bits.RCIF = 0;
     }
 }
 
@@ -59,18 +65,30 @@ void main(void) {
             start_conversion();
             start_another = 0;
         }
-        
-        
+        if (Contador == 0x2B){
+            valor++;
+            Contador = 0;
+        }else if (Contador == 0x2D){
+            valor--;
+            Contador = 0;
+        }
         volt1 = pot1*(5.0/255);
         volt2 = pot2*(5.0/255);  
-        sprintf(string1,"%1.2f", volt1);
-        sprintf(string2, "%1.2f", volt2);
+        sprintf(string1,"%1.1f", volt1);
+        sprintf(string2, "%1.1f", volt2);
+        sprintf(string3, "%d", valor);
         LCD_SET_CURSOR(1,1);
         LCD_WRITE_STRING("V1   V2  Cont.");
         LCD_SET_CURSOR(2,1);
         LCD_WRITE_STRING(string1);
         LCD_SET_CURSOR(2,6);
         LCD_WRITE_STRING(string2);
+        LCD_SET_CURSOR(2, 11);
+        LCD_WRITE_STRING(string3);
+        TXREG = 0x45;
+        SEND_STRING(string1);
+        SEND_STRING(string2);
+        SEND_STRING(string3);
     }
     return;
 }

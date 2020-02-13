@@ -2638,9 +2638,13 @@ extern __bank0 __bit __timeout;
 # 6 "./EUSARTheader.h" 2
 
 
+
+
+
 void EUSART_Init(uint8_t a, uint8_t b);
 uint8_t CHECK_FOR_ERRORS (void);
 void SEND_STRING(char *a);
+void SEND_CHAR(char a);
 # 3 "Lib_EUSART.c" 2
 
 
@@ -2650,6 +2654,7 @@ void EUSART_Init (uint8_t a, uint8_t b){
     TXSTAbits.BRGH = 1;
     TXSTAbits.SYNC = 0;
     RCSTAbits.SPEN = 1;
+    SPBRG = 25;
     if (a==1){
         PIE1bits.RCIE = 1;
         PIR1bits.RCIF = 0;
@@ -2680,4 +2685,18 @@ uint8_t CHECK_FOR_ERRORS (void){
         return 0;
     }
 
+}
+
+void SEND_STRING(char *a){
+
+    int i;
+    for(i=0; a[i]!='\0'; i++){
+        SEND_CHAR(a[i]);
+    }
+}
+
+void SEND_CHAR (char a){
+    TXREG = a;
+    while(PIR1bits.TXIF == 0){
+    }
 }

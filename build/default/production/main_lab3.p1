@@ -38,6 +38,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 "1238
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 1238: extern volatile unsigned char ADRESH __attribute__((address(0x01E)));
 [v _ADRESH `Vuc ~T0 @X0 0 e@30 ]
+"1140
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 1140: extern volatile unsigned char RCREG __attribute__((address(0x01A)));
+[v _RCREG `Vuc ~T0 @X0 0 e@26 ]
 [p mainexit ]
 "32 main_lab3.c
 [; ;main_lab3.c: 32: void Port_init(void);
@@ -48,8 +51,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 "8 ./ADCheader.h
 [; ;./ADCheader.h: 8: void ADC_init(uint8_t Fosc ,uint8_t channel, uint8_t int_on, uint8_t left_or_right);
 [v _ADC_init `(v ~T0 @X0 0 ef4`uc`uc`uc`uc ]
-"8 ./EUSARTheader.h
-[; ;./EUSARTheader.h: 8: void EUSART_Init(uint8_t a, uint8_t b);
+"11 ./EUSARTheader.h
+[; ;./EUSARTheader.h: 11: void EUSART_Init(uint8_t a, uint8_t b);
 [v _EUSART_Init `(v ~T0 @X0 0 ef2`uc`uc ]
 "9 ./ADCheader.h
 [; ;./ADCheader.h: 9: void start_conversion (void);
@@ -62,6 +65,12 @@ Version 4.0 HI-TECH Software Intermediate Code
 "29
 [; ;./LCD_8bits.h: 29: void LCD_WRITE_STRING(char *a);
 [v _LCD_WRITE_STRING `(v ~T0 @X0 0 ef1`*uc ]
+"1133 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 1133: extern volatile unsigned char TXREG __attribute__((address(0x019)));
+[v _TXREG `Vuc ~T0 @X0 0 e@25 ]
+"13 ./EUSARTheader.h
+[; ;./EUSARTheader.h: 13: void SEND_STRING(char *a);
+[v _SEND_STRING `(v ~T0 @X0 0 ef1`*uc ]
 "1416 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 1416: extern volatile unsigned char TRISA __attribute__((address(0x085)));
 [v _TRISA `Vuc ~T0 @X0 0 e@133 ]
@@ -354,180 +363,257 @@ Version 4.0 HI-TECH Software Intermediate Code
 [v _volt1 `f ~T0 @X0 1 e ]
 [v _volt2 `f ~T0 @X0 1 e ]
 "35
-[; ;main_lab3.c: 35: char string1[5];
-[v _string1 `uc ~T0 @X0 -> 5 `i e ]
+[; ;main_lab3.c: 35: int valor = 0;
+[v _valor `i ~T0 @X0 1 e ]
+[i _valor
+-> 0 `i
+]
 "36
-[; ;main_lab3.c: 36: char string2[5];
-[v _string2 `uc ~T0 @X0 -> 5 `i e ]
-[v $root$_isr `(v ~T0 @X0 0 e ]
+[; ;main_lab3.c: 36: char Contador;
+[v _Contador `uc ~T0 @X0 1 e ]
+"37
+[; ;main_lab3.c: 37: char string1[4];
+[v _string1 `uc ~T0 @X0 -> 4 `i e ]
 "38
-[; ;main_lab3.c: 38: void __attribute__((picinterrupt(("")))) isr(void){
+[; ;main_lab3.c: 38: char string2[4];
+[v _string2 `uc ~T0 @X0 -> 4 `i e ]
+"39
+[; ;main_lab3.c: 39: char string3[3];
+[v _string3 `uc ~T0 @X0 -> 3 `i e ]
+[v $root$_isr `(v ~T0 @X0 0 e ]
+"41
+[; ;main_lab3.c: 41: void __attribute__((picinterrupt(("")))) isr(void){
 [v _isr `(v ~T1 @X0 1 ef ]
 {
 [e :U _isr ]
 [f ]
-"39
-[; ;main_lab3.c: 39:     if (PIR1bits.ADIF == 1){
+"42
+[; ;main_lab3.c: 42:     if (PIR1bits.ADIF == 1){
 [e $ ! == -> . . _PIR1bits 0 6 `i -> 1 `i 140  ]
 {
-"40
-[; ;main_lab3.c: 40:         PIR1bits.ADIF = 0;
+"43
+[; ;main_lab3.c: 43:         PIR1bits.ADIF = 0;
 [e = . . _PIR1bits 0 6 -> -> 0 `i `uc ]
-"41
-[; ;main_lab3.c: 41:         start_another = 1;
+"44
+[; ;main_lab3.c: 44:         start_another = 1;
 [e = _start_another -> -> 1 `i `uc ]
-"42
-[; ;main_lab3.c: 42:         if (ADCON0bits.CHS0 == 0){
+"45
+[; ;main_lab3.c: 45:         if (ADCON0bits.CHS0 == 0){
 [e $ ! == -> . . _ADCON0bits 1 2 `i -> 0 `i 141  ]
 {
-"43
-[; ;main_lab3.c: 43:             pot2 = ADRESH;
+"46
+[; ;main_lab3.c: 46:             pot2 = ADRESH;
 [e = _pot2 _ADRESH ]
-"44
-[; ;main_lab3.c: 44:             ADCON0bits.CHS0 = 1;
+"47
+[; ;main_lab3.c: 47:             ADCON0bits.CHS0 = 1;
 [e = . . _ADCON0bits 1 2 -> -> 1 `i `uc ]
-"45
-[; ;main_lab3.c: 45:         }else{
+"48
+[; ;main_lab3.c: 48:         }else{
 }
 [e $U 142  ]
 [e :U 141 ]
 {
-"46
-[; ;main_lab3.c: 46:             pot1 = ADRESH;
+"49
+[; ;main_lab3.c: 49:             pot1 = ADRESH;
 [e = _pot1 _ADRESH ]
-"47
-[; ;main_lab3.c: 47:             ADCON0bits.CHS0 = 0;
+"50
+[; ;main_lab3.c: 50:             ADCON0bits.CHS0 = 0;
 [e = . . _ADCON0bits 1 2 -> -> 0 `i `uc ]
-"48
-[; ;main_lab3.c: 48:         }
+"51
+[; ;main_lab3.c: 51:         }
 }
 [e :U 142 ]
-"49
-[; ;main_lab3.c: 49:     }
+"52
+[; ;main_lab3.c: 52:     }if (PIR1bits.RCIF == 1){
 }
 [e :U 140 ]
-"50
-[; ;main_lab3.c: 50: }
+[e $ ! == -> . . _PIR1bits 0 5 `i -> 1 `i 143  ]
+{
+"53
+[; ;main_lab3.c: 53:         Contador = RCREG;
+[e = _Contador -> _RCREG `uc ]
+"54
+[; ;main_lab3.c: 54:         PIR1bits.RCIF = 0;
+[e = . . _PIR1bits 0 5 -> -> 0 `i `uc ]
+"55
+[; ;main_lab3.c: 55:     }
+}
+[e :U 143 ]
+"56
+[; ;main_lab3.c: 56: }
 [e :UE 139 ]
 }
 [v $root$_main `(v ~T0 @X0 0 e ]
-"52
-[; ;main_lab3.c: 52: void main(void) {
+"58
+[; ;main_lab3.c: 58: void main(void) {
 [v _main `(v ~T0 @X0 1 ef ]
 {
 [e :U _main ]
 [f ]
-"53
-[; ;main_lab3.c: 53:     Port_init();
-[e ( _Port_init ..  ]
-"54
-[; ;main_lab3.c: 54:     LCD_INIT();
-[e ( _LCD_INIT ..  ]
-"55
-[; ;main_lab3.c: 55:     ADC_init(1,1,1,0);
-[e ( _ADC_init (4 , , , -> -> 1 `i `uc -> -> 1 `i `uc -> -> 1 `i `uc -> -> 0 `i `uc ]
-"56
-[; ;main_lab3.c: 56:     EUSART_Init(1, 0);
-[e ( _EUSART_Init (2 , -> -> 1 `i `uc -> -> 0 `i `uc ]
-"57
-[; ;main_lab3.c: 57:     while(1){
-[e :U 145 ]
-{
-"58
-[; ;main_lab3.c: 58:         if (start_another == 1){
-[e $ ! == -> _start_another `i -> 1 `i 147  ]
-{
 "59
-[; ;main_lab3.c: 59:             start_conversion();
-[e ( _start_conversion ..  ]
+[; ;main_lab3.c: 59:     Port_init();
+[e ( _Port_init ..  ]
 "60
-[; ;main_lab3.c: 60:             start_another = 0;
-[e = _start_another -> -> 0 `i `uc ]
+[; ;main_lab3.c: 60:     LCD_INIT();
+[e ( _LCD_INIT ..  ]
 "61
-[; ;main_lab3.c: 61:         }
-}
-[e :U 147 ]
-"64
-[; ;main_lab3.c: 64:         volt1 = pot1*(5.0/255);
-[e = _volt1 -> * -> -> _pot1 `i `d / .5.0 -> -> 255 `i `d `f ]
-"65
-[; ;main_lab3.c: 65:         volt2 = pot2*(5.0/255);
-[e = _volt2 -> * -> -> _pot2 `i `d / .5.0 -> -> 255 `i `d `f ]
-"66
-[; ;main_lab3.c: 66:         sprintf(string1,"%1.2f", volt1);
-[e ( _sprintf (1 , (. , &U _string1 :s 1C -> _volt1 `d ]
-"67
-[; ;main_lab3.c: 67:         sprintf(string2, "%1.2f", volt2);
-[e ( _sprintf (1 , (. , &U _string2 :s 2C -> _volt2 `d ]
-"68
-[; ;main_lab3.c: 68:         LCD_SET_CURSOR(1,1);
-[e ( _LCD_SET_CURSOR (2 , -> -> 1 `i `uc -> -> 1 `i `uc ]
-"69
-[; ;main_lab3.c: 69:         LCD_WRITE_STRING("V1   V2  Cont.");
-[e ( _LCD_WRITE_STRING (1 :s 3C ]
-"70
-[; ;main_lab3.c: 70:         LCD_SET_CURSOR(2,1);
-[e ( _LCD_SET_CURSOR (2 , -> -> 2 `i `uc -> -> 1 `i `uc ]
-"71
-[; ;main_lab3.c: 71:         LCD_WRITE_STRING(string1);
-[e ( _LCD_WRITE_STRING (1 &U _string1 ]
-"72
-[; ;main_lab3.c: 72:         LCD_SET_CURSOR(2,6);
-[e ( _LCD_SET_CURSOR (2 , -> -> 2 `i `uc -> -> 6 `i `uc ]
-"73
-[; ;main_lab3.c: 73:         LCD_WRITE_STRING(string2);
-[e ( _LCD_WRITE_STRING (1 &U _string2 ]
-"74
-[; ;main_lab3.c: 74:     }
-}
-[e :U 144 ]
-[e $U 145  ]
+[; ;main_lab3.c: 61:     ADC_init(1,1,1,0);
+[e ( _ADC_init (4 , , , -> -> 1 `i `uc -> -> 1 `i `uc -> -> 1 `i `uc -> -> 0 `i `uc ]
+"62
+[; ;main_lab3.c: 62:     EUSART_Init(1, 0);
+[e ( _EUSART_Init (2 , -> -> 1 `i `uc -> -> 0 `i `uc ]
+"63
+[; ;main_lab3.c: 63:     while(1){
 [e :U 146 ]
-"75
-[; ;main_lab3.c: 75:     return;
-[e $UE 143  ]
-"76
-[; ;main_lab3.c: 76: }
-[e :UE 143 ]
+{
+"64
+[; ;main_lab3.c: 64:         if (start_another == 1){
+[e $ ! == -> _start_another `i -> 1 `i 148  ]
+{
+"65
+[; ;main_lab3.c: 65:             start_conversion();
+[e ( _start_conversion ..  ]
+"66
+[; ;main_lab3.c: 66:             start_another = 0;
+[e = _start_another -> -> 0 `i `uc ]
+"67
+[; ;main_lab3.c: 67:         }
 }
+[e :U 148 ]
+"68
+[; ;main_lab3.c: 68:         if (Contador == 0x2B){
+[e $ ! == -> _Contador `i -> 43 `i 149  ]
+{
+"69
+[; ;main_lab3.c: 69:             valor++;
+[e ++ _valor -> 1 `i ]
+"70
+[; ;main_lab3.c: 70:             Contador = 0;
+[e = _Contador -> -> 0 `i `uc ]
+"71
+[; ;main_lab3.c: 71:         }else if (Contador == 0x2D){
+}
+[e $U 150  ]
+[e :U 149 ]
+[e $ ! == -> _Contador `i -> 45 `i 151  ]
+{
+"72
+[; ;main_lab3.c: 72:             valor--;
+[e -- _valor -> 1 `i ]
+"73
+[; ;main_lab3.c: 73:             Contador = 0;
+[e = _Contador -> -> 0 `i `uc ]
+"74
+[; ;main_lab3.c: 74:         }
+}
+[e :U 151 ]
+[e :U 150 ]
+"75
+[; ;main_lab3.c: 75:         valor = Contador;
+[e = _valor -> _Contador `i ]
+"76
+[; ;main_lab3.c: 76:         volt1 = pot1*(5.0/255);
+[e = _volt1 -> * -> -> _pot1 `i `d / .5.0 -> -> 255 `i `d `f ]
+"77
+[; ;main_lab3.c: 77:         volt2 = pot2*(5.0/255);
+[e = _volt2 -> * -> -> _pot2 `i `d / .5.0 -> -> 255 `i `d `f ]
 "78
-[; ;main_lab3.c: 78: void Port_init(void){
+[; ;main_lab3.c: 78:         sprintf(string1,"%1.1f", volt1);
+[e ( _sprintf (1 , (. , &U _string1 :s 1C -> _volt1 `d ]
+"79
+[; ;main_lab3.c: 79:         sprintf(string2, "%1.1f", volt2);
+[e ( _sprintf (1 , (. , &U _string2 :s 2C -> _volt2 `d ]
+"80
+[; ;main_lab3.c: 80:         sprintf(string3, "%d", valor);
+[e ( _sprintf (1 , (. , &U _string3 :s 3C _valor ]
+"81
+[; ;main_lab3.c: 81:         LCD_SET_CURSOR(1,1);
+[e ( _LCD_SET_CURSOR (2 , -> -> 1 `i `uc -> -> 1 `i `uc ]
+"82
+[; ;main_lab3.c: 82:         LCD_WRITE_STRING("V1   V2  Cont.");
+[e ( _LCD_WRITE_STRING (1 :s 4C ]
+"83
+[; ;main_lab3.c: 83:         LCD_SET_CURSOR(2,1);
+[e ( _LCD_SET_CURSOR (2 , -> -> 2 `i `uc -> -> 1 `i `uc ]
+"84
+[; ;main_lab3.c: 84:         LCD_WRITE_STRING(string1);
+[e ( _LCD_WRITE_STRING (1 &U _string1 ]
+"85
+[; ;main_lab3.c: 85:         LCD_SET_CURSOR(2,6);
+[e ( _LCD_SET_CURSOR (2 , -> -> 2 `i `uc -> -> 6 `i `uc ]
+"86
+[; ;main_lab3.c: 86:         LCD_WRITE_STRING(string2);
+[e ( _LCD_WRITE_STRING (1 &U _string2 ]
+"87
+[; ;main_lab3.c: 87:         LCD_SET_CURSOR(2, 11);
+[e ( _LCD_SET_CURSOR (2 , -> -> 2 `i `uc -> -> 11 `i `uc ]
+"88
+[; ;main_lab3.c: 88:         LCD_WRITE_STRING(string3);
+[e ( _LCD_WRITE_STRING (1 &U _string3 ]
+"89
+[; ;main_lab3.c: 89:         TXREG = 0x45;
+[e = _TXREG -> -> 69 `i `uc ]
+"90
+[; ;main_lab3.c: 90:         SEND_STRING(string1);
+[e ( _SEND_STRING (1 &U _string1 ]
+"91
+[; ;main_lab3.c: 91:         SEND_STRING(string2);
+[e ( _SEND_STRING (1 &U _string2 ]
+"92
+[; ;main_lab3.c: 92:         SEND_STRING(string3);
+[e ( _SEND_STRING (1 &U _string3 ]
+"93
+[; ;main_lab3.c: 93:     }
+}
+[e :U 145 ]
+[e $U 146  ]
+[e :U 147 ]
+"94
+[; ;main_lab3.c: 94:     return;
+[e $UE 144  ]
+"95
+[; ;main_lab3.c: 95: }
+[e :UE 144 ]
+}
+"97
+[; ;main_lab3.c: 97: void Port_init(void){
 [v _Port_init `(v ~T0 @X0 1 ef ]
 {
 [e :U _Port_init ]
 [f ]
-"79
-[; ;main_lab3.c: 79:     TRISA = 0x03;
+"98
+[; ;main_lab3.c: 98:     TRISA = 0x03;
 [e = _TRISA -> -> 3 `i `uc ]
-"80
-[; ;main_lab3.c: 80:     ANSEL = 0;
+"99
+[; ;main_lab3.c: 99:     ANSEL = 0;
 [e = _ANSEL -> -> 0 `i `uc ]
-"81
-[; ;main_lab3.c: 81:     ANSEL = 0x03;
+"100
+[; ;main_lab3.c: 100:     ANSEL = 0x03;
 [e = _ANSEL -> -> 3 `i `uc ]
-"82
-[; ;main_lab3.c: 82:     ANSELH = 0;
+"101
+[; ;main_lab3.c: 101:     ANSELH = 0;
 [e = _ANSELH -> -> 0 `i `uc ]
-"83
-[; ;main_lab3.c: 83:     TRISB = 0;
+"102
+[; ;main_lab3.c: 102:     TRISB = 0;
 [e = _TRISB -> -> 0 `i `uc ]
-"84
-[; ;main_lab3.c: 84:     PORTB = 0;
+"103
+[; ;main_lab3.c: 103:     PORTB = 0;
 [e = _PORTB -> -> 0 `i `uc ]
-"85
-[; ;main_lab3.c: 85:     TRISD = 0;
+"104
+[; ;main_lab3.c: 104:     TRISD = 0;
 [e = _TRISD -> -> 0 `i `uc ]
-"86
-[; ;main_lab3.c: 86:     PORTD = 0;
+"105
+[; ;main_lab3.c: 105:     PORTD = 0;
 [e = _PORTD -> -> 0 `i `uc ]
-"87
-[; ;main_lab3.c: 87:     PORTA = 0;
+"106
+[; ;main_lab3.c: 106:     PORTA = 0;
 [e = _PORTA -> -> 0 `i `uc ]
-"88
-[; ;main_lab3.c: 88: }
-[e :UE 148 ]
+"107
+[; ;main_lab3.c: 107: }
+[e :UE 152 ]
 }
-[p f _sprintf 8495104 ]
-[a 1C 37 49 46 50 102 0 ]
-[a 2C 37 49 46 50 102 0 ]
-[a 3C 86 49 32 32 32 86 50 32 32 67 111 110 116 46 0 ]
+[p f _sprintf 8495232 ]
+[a 1C 37 49 46 49 102 0 ]
+[a 2C 37 49 46 49 102 0 ]
+[a 3C 37 100 0 ]
+[a 4C 86 49 32 32 32 86 50 32 32 67 111 110 116 46 0 ]
