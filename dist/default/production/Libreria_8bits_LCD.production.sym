@@ -464,7 +464,7 @@ clrtext 327E 328D CODE 327E 0
 text1 1000 1007 CODE 1000 0
 %locals
 dist/default/production\Libreria_8bits_LCD.production.o
-C:\Users\megaj\AppData\Local\Temp\s868.s
+C:\Users\megaj\AppData\Local\Temp\s76s.s
 1259 F 0 CODE 0
 1262 F 0 CODE 0
 1318 F 0 CODE 0

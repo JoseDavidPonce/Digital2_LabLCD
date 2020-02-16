@@ -72,6 +72,7 @@ void main(void) {
             valor--;
             Contador = 0;
         }
+        valor = Contador;
         volt1 = pot1*(5.0/255);
         volt2 = pot2*(5.0/255);  
         sprintf(string1,"%1.1f", volt1);

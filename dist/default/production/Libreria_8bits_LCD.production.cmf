@@ -57,7 +57,7 @@ bssBANK0 BANK0 1 6F 6F 1 1
 bssBANK1 BANK1 1 CC CC 18 1
 strings STRING 0 1800 1800 B8 2
 clrtext CODE 0 193F 193F 8 2
-$C:\Users\megaj\AppData\Local\Temp\s868.o
+$C:\Users\megaj\AppData\Local\Temp\s76s.o
 reset_vec CODE 0 0 0 3 2
 end_init CODE 0 C C 3 2
 config CONFIG 0 2007 2007 2 2
@@ -115,19 +115,19 @@ STRING 18B8-193E 2
 # All other numeric values are in decimal.
 %LINETAB
 $dist/default/production\Libreria_8bits_LCD.production.o
-F cinit CODE >1259:C:\Users\megaj\AppData\Local\Temp\s868.s
-F cinit CODE >1262:C:\Users\megaj\AppData\Local\Temp\s868.s
-F cinit CODE >1318:C:\Users\megaj\AppData\Local\Temp\s868.s
-10 cinit CODE >1319:C:\Users\megaj\AppData\Local\Temp\s868.s
-11 cinit CODE >1320:C:\Users\megaj\AppData\Local\Temp\s868.s
-12 cinit CODE >1323:C:\Users\megaj\AppData\Local\Temp\s868.s
-13 cinit CODE >1324:C:\Users\megaj\AppData\Local\Temp\s868.s
-14 cinit CODE >1325:C:\Users\megaj\AppData\Local\Temp\s868.s
-15 cinit CODE >1326:C:\Users\megaj\AppData\Local\Temp\s868.s
-16 cinit CODE >1327:C:\Users\megaj\AppData\Local\Temp\s868.s
-1B cinit CODE >1333:C:\Users\megaj\AppData\Local\Temp\s868.s
-1B cinit CODE >1335:C:\Users\megaj\AppData\Local\Temp\s868.s
-1C cinit CODE >1336:C:\Users\megaj\AppData\Local\Temp\s868.s
+F cinit CODE >1259:C:\Users\megaj\AppData\Local\Temp\s76s.s
+F cinit CODE >1262:C:\Users\megaj\AppData\Local\Temp\s76s.s
+F cinit CODE >1318:C:\Users\megaj\AppData\Local\Temp\s76s.s
+10 cinit CODE >1319:C:\Users\megaj\AppData\Local\Temp\s76s.s
+11 cinit CODE >1320:C:\Users\megaj\AppData\Local\Temp\s76s.s
+12 cinit CODE >1323:C:\Users\megaj\AppData\Local\Temp\s76s.s
+13 cinit CODE >1324:C:\Users\megaj\AppData\Local\Temp\s76s.s
+14 cinit CODE >1325:C:\Users\megaj\AppData\Local\Temp\s76s.s
+15 cinit CODE >1326:C:\Users\megaj\AppData\Local\Temp\s76s.s
+16 cinit CODE >1327:C:\Users\megaj\AppData\Local\Temp\s76s.s
+1B cinit CODE >1333:C:\Users\megaj\AppData\Local\Temp\s76s.s
+1B cinit CODE >1335:C:\Users\megaj\AppData\Local\Temp\s76s.s
+1C cinit CODE >1336:C:\Users\megaj\AppData\Local\Temp\s76s.s
 4 intentry CODE >41:C:\Users\megaj\Desktop\UVG\5to Semestre\Digital 2\Repositorios\Libreria_8bits_LCD\main_lab3.c
 1F text2_split_1 CODE >1142:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\doprnt.c
 70 text2_split_1 CODE >1146:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\doprnt.c
@@ -1006,16 +1006,16 @@ FFF text3 CODE >449:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\c
 7A2 maintext CODE >90:C:\Users\megaj\Desktop\UVG\5to Semestre\Digital 2\Repositorios\Libreria_8bits_LCD\main_lab3.c
 7A8 maintext CODE >91:C:\Users\megaj\Desktop\UVG\5to Semestre\Digital 2\Repositorios\Libreria_8bits_LCD\main_lab3.c
 7AE maintext CODE >92:C:\Users\megaj\Desktop\UVG\5to Semestre\Digital 2\Repositorios\Libreria_8bits_LCD\main_lab3.c
-193F clrtext CODE >1305:C:\Users\megaj\AppData\Local\Temp\s868.s
-193F clrtext CODE >1306:C:\Users\megaj\AppData\Local\Temp\s868.s
-1940 clrtext CODE >1307:C:\Users\megaj\AppData\Local\Temp\s868.s
-1940 clrtext CODE >1308:C:\Users\megaj\AppData\Local\Temp\s868.s
-1941 clrtext CODE >1309:C:\Users\megaj\AppData\Local\Temp\s868.s
-1942 clrtext CODE >1310:C:\Users\megaj\AppData\Local\Temp\s868.s
-1943 clrtext CODE >1311:C:\Users\megaj\AppData\Local\Temp\s868.s
-1944 clrtext CODE >1312:C:\Users\megaj\AppData\Local\Temp\s868.s
-1945 clrtext CODE >1313:C:\Users\megaj\AppData\Local\Temp\s868.s
-1946 clrtext CODE >1314:C:\Users\megaj\AppData\Local\Temp\s868.s
+193F clrtext CODE >1305:C:\Users\megaj\AppData\Local\Temp\s76s.s
+193F clrtext CODE >1306:C:\Users\megaj\AppData\Local\Temp\s76s.s
+1940 clrtext CODE >1307:C:\Users\megaj\AppData\Local\Temp\s76s.s
+1940 clrtext CODE >1308:C:\Users\megaj\AppData\Local\Temp\s76s.s
+1941 clrtext CODE >1309:C:\Users\megaj\AppData\Local\Temp\s76s.s
+1942 clrtext CODE >1310:C:\Users\megaj\AppData\Local\Temp\s76s.s
+1943 clrtext CODE >1311:C:\Users\megaj\AppData\Local\Temp\s76s.s
+1944 clrtext CODE >1312:C:\Users\megaj\AppData\Local\Temp\s76s.s
+1945 clrtext CODE >1313:C:\Users\megaj\AppData\Local\Temp\s76s.s
+1946 clrtext CODE >1314:C:\Users\megaj\AppData\Local\Temp\s76s.s
 # %SYMTAB Section
 # An enumeration of all symbols in the program.
 # The beginning of the section is indicated by %SYMTAB.
@@ -1042,12 +1042,12 @@ __end_of__tdiv_to_l_ 3E84 0 CODE 0 text12 dist/default/production\Libreria_8bits
 __size_of_LCD_SET_CURSOR 0 0 ABS 0 - dist/default/production\Libreria_8bits_LCD.production.o
 __Heeprom_data 0 0 EEDATA 3 eeprom_data -
 __Hstrings 0 0 ABS 0 strings -
-___sp 0 0 STACK 2 stack C:\Users\megaj\AppData\Local\Temp\s868.o
+___sp 0 0 STACK 2 stack C:\Users\megaj\AppData\Local\Temp\s76s.o
 _main C16 0 CODE 0 maintext dist/default/production\Libreria_8bits_LCD.production.o
 _pot1 D8 0 BANK1 1 bssBANK1 dist/default/production\Libreria_8bits_LCD.production.o
 _pot2 D7 0 BANK1 1 bssBANK1 dist/default/production\Libreria_8bits_LCD.production.o
 btemp 7E 0 ABS 0 - dist/default/production\Libreria_8bits_LCD.production.o
-start 18 0 CODE 0 init C:\Users\megaj\AppData\Local\Temp\s868.o
+start 18 0 CODE 0 init C:\Users\megaj\AppData\Local\Temp\s76s.o
 ___flmul@aexp 3A 0 BANK0 1 cstackBANK0 dist/default/production\Libreria_8bits_LCD.production.o
 ___flmul@bexp 3B 0 BANK0 1 cstackBANK0 dist/default/production\Libreria_8bits_LCD.production.o
 ___flmul@prod 3C 0 BANK0 1 cstackBANK0 dist/default/production\Libreria_8bits_LCD.production.o
@@ -1079,12 +1079,12 @@ __size_of_ADC_init 0 0 ABS 0 - dist/default/production\Libreria_8bits_LCD.produc
 _sprintf$1234 AD 0 BANK1 1 cstackBANK1 dist/default/production\Libreria_8bits_LCD.production.o
 __end_of_LCD_WRITE_CHAR 3320 0 CODE 0 text28 dist/default/production\Libreria_8bits_LCD.production.o
 __end_of_LCD_INIT 381C 0 CODE 0 text30 dist/default/production\Libreria_8bits_LCD.production.o
-intlevel0 0 0 ENTRY 0 functab C:\Users\megaj\AppData\Local\Temp\s868.o
-intlevel1 0 0 ENTRY 0 functab C:\Users\megaj\AppData\Local\Temp\s868.o
-intlevel2 0 0 ENTRY 0 functab C:\Users\megaj\AppData\Local\Temp\s868.o
-intlevel3 0 0 ENTRY 0 functab C:\Users\megaj\AppData\Local\Temp\s868.o
-intlevel4 0 0 ENTRY 0 functab C:\Users\megaj\AppData\Local\Temp\s868.o
-intlevel5 0 0 ENTRY 0 functab C:\Users\megaj\AppData\Local\Temp\s868.o
+intlevel0 0 0 ENTRY 0 functab C:\Users\megaj\AppData\Local\Temp\s76s.o
+intlevel1 0 0 ENTRY 0 functab C:\Users\megaj\AppData\Local\Temp\s76s.o
+intlevel2 0 0 ENTRY 0 functab C:\Users\megaj\AppData\Local\Temp\s76s.o
+intlevel3 0 0 ENTRY 0 functab C:\Users\megaj\AppData\Local\Temp\s76s.o
+intlevel4 0 0 ENTRY 0 functab C:\Users\megaj\AppData\Local\Temp\s76s.o
+intlevel5 0 0 ENTRY 0 functab C:\Users\megaj\AppData\Local\Temp\s76s.o
 __size_of__div_to_l_ 0 0 ABS 0 - dist/default/production\Libreria_8bits_LCD.production.o
 pnum$text2 C 0 ABS 0 - dist/default/production\Libreria_8bits_LCD.production.o
 wtemp0 7E 0 ABS 0 - dist/default/production\Libreria_8bits_LCD.production.o
@@ -1132,8 +1132,8 @@ __size_of_isdigit 0 0 ABS 0 - dist/default/production\Libreria_8bits_LCD.product
 _LCD_WRITE_STRING 35AA 0 CODE 0 text27 dist/default/production\Libreria_8bits_LCD.production.o
 __Umul8_16@multiplicand 73 0 COMMON 1 cstackCOMMON dist/default/production\Libreria_8bits_LCD.production.o
 __end_of_ADC_init 1278 0 CODE 0 text33 dist/default/production\Libreria_8bits_LCD.production.o
-___stackhi 0 0 ABS 0 - C:\Users\megaj\AppData\Local\Temp\s868.o
-___stacklo 0 0 ABS 0 - C:\Users\megaj\AppData\Local\Temp\s868.o
+___stackhi 0 0 ABS 0 - C:\Users\megaj\AppData\Local\Temp\s76s.o
+___stacklo 0 0 ABS 0 - C:\Users\megaj\AppData\Local\Temp\s76s.o
 __end_of_LCD_CMD 32F2 0 CODE 0 text31 dist/default/production\Libreria_8bits_LCD.production.o
 _dpowers 30F0 0 STRING 0 strings dist/default/production\Libreria_8bits_LCD.production.o
 _BAUDCTLbits 187 0 ABS 0 - dist/default/production\Libreria_8bits_LCD.production.o
@@ -1159,7 +1159,7 @@ __pcstackBANK0 20 0 BANK0 1 cstackBANK0 dist/default/production\Libreria_8bits_L
 __pcstackBANK1 A0 0 BANK1 1 cstackBANK1 dist/default/production\Libreria_8bits_LCD.production.o
 __tdiv_to_l_@f1 73 0 COMMON 1 cstackCOMMON dist/default/production\Libreria_8bits_LCD.production.o
 __tdiv_to_l_@f2 77 0 COMMON 1 cstackCOMMON dist/default/production\Libreria_8bits_LCD.production.o
-___int_sp 0 0 STACK 2 stack C:\Users\megaj\AppData\Local\Temp\s868.o
+___int_sp 0 0 STACK 2 stack C:\Users\megaj\AppData\Local\Temp\s76s.o
 __end_of_EUSART_Init 34CE 0 CODE 0 text32 dist/default/production\Libreria_8bits_LCD.production.o
 __Hbank0 0 0 ABS 0 bank0 -
 __Hbank1 0 0 ABS 0 bank1 -
@@ -1236,7 +1236,7 @@ __end_of_isr 3536 0 CODE 0 text34 dist/default/production\Libreria_8bits_LCD.pro
 __Lintentry 8 0 CODE 0 intentry -
 ___lldiv@divisor 73 0 COMMON 1 cstackCOMMON dist/default/production\Libreria_8bits_LCD.production.o
 __stringtab 3000 0 STRING 0 strings dist/default/production\Libreria_8bits_LCD.production.o
-reset_vec 0 0 CODE 0 reset_vec C:\Users\megaj\AppData\Local\Temp\s868.o
+reset_vec 0 0 CODE 0 reset_vec C:\Users\megaj\AppData\Local\Temp\s76s.o
 __size_of_LCD_WRITE_CHAR 0 0 ABS 0 - dist/default/production\Libreria_8bits_LCD.production.o
 __end_of___xxtofl 3D0A 0 CODE 0 text14 dist/default/production\Libreria_8bits_LCD.production.o
 __powers_ 3020 0 STRING 0 strings dist/default/production\Libreria_8bits_LCD.production.o
